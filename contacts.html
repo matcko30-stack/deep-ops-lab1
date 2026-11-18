@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Контактна інформація та форма зворотного зв'язку">
+  <meta name="author" content="Мацько Богдан Володимирович">
+  <title>Контакти | DEEP OPS</title>
+  <!-- Підключення єдиного зовнішнього файлу стилів -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+<body>
+
+  <!-- Початок шапки -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/emblem.png" alt="Емблема DEEP OPS: морський коник із тризубом" width="64" height="64" class="emblem">
+        <span class="logo-text">
+          <span class="site-name">DEEP OPS</span>
+          <span class="slogan">Довготривалий бойовий дайвінг: підрозділи та спорядження</span>
+        </span>
+      </a>
+    </div>
+  </header>
+  <!-- Кінець шапки -->
+
+  <!-- Початок навігації -->
+  <nav class="site-nav" aria-label="Головне меню">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="units.html">Підрозділи</a></li>
+        <li><a href="gallery.html">Спорядження</a></li>
+        <li><a href="tips.html">Поради</a></li>
+        <li><a href="contacts.html" class="active" aria-current="page">Контакти</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Кінець навігації -->
+
+  <!-- Початок основного контенту: три блоки -->
+  <main class="container content">
+    <h1 class="page-title">Контакти</h1>
+
+    <!-- Блок 1: вступна інформація -->
+    <section class="block">
+      <h2>Зв'яжіться з нами</h2>
+      <p>Маєте питання про спорядження, хочете доповнити інформацію про підрозділи або знайшли неточність? Напишіть нам — ми відповімо й оновимо сайт.</p>
+      <p>Форма на цій сторінці навчальна: вона демонструє HTML-розмітку і не надсилає дані на сервер. Перш ніж писати, перегляньте сторінку <a href="tips.html">«Поради»</a> — можливо, відповідь уже там.</p>
+    </section>
+
+    <!-- Блок 2: контакти та форма зворотного зв'язку -->
+    <section class="block">
+      <h2>Форма зворотного зв'язку</h2>
+      <ul>
+        <li>E-mail: <a href="mailto:deep.ops@example.com">deep.ops@example.com</a></li>
+        <li>Telegram: <a href="https://t.me/" target="_blank" rel="noopener">@deep_ops</a></li>
+      </ul>
+      <!-- Проста форма без серверної обробки -->
+      <form class="contact-form" action="#" method="get">
+        <label for="name">Ім'я</label>
+        <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="topic">Тема</label>
+        <select id="topic" name="topic">
+          <option value="gear">Спорядження</option>
+          <option value="units">Підрозділи</option>
+          <option value="other">Інше</option>
+        </select>
+
+        <label for="message">Повідомлення</label>
+        <textarea id="message" name="message" rows="5" placeholder="Ваше повідомлення"></textarea>
+
+        <button type="submit">Надіслати</button>
+      </form>
+    </section>
+
+    <!-- Блок 3: таблиця -->
+    <section class="block">
+      <h2>Коли ми відповідаємо</h2>
+      <table>
+        <caption>Орієнтовний час відповіді</caption>
+        <thead>
+          <tr><th scope="col">Канал</th><th scope="col">Дні</th><th scope="col">Відповідь</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>E-mail</td><td>Пн–Пт</td><td>До 24 год</td></tr>
+          <tr><td>Telegram</td><td>Щодня</td><td>До 3 год</td></tr>
+          <tr><td>Форма на сайті</td><td>Пн–Пт</td><td>До 48 год</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+  <!-- Кінець основного контенту -->
+
+  <!-- Початок футера -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Мацько Богдан. Навчальний проєкт, не пов'язаний зі згаданими підрозділами.</p>
+      <ul class="social">
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://t.me/" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+      <p>Дата створення сайту: <time datetime="2026-11-18">18.11.2026</time></p>
+    </div>
+  </footer>
+  <!-- Кінець футера -->
+
+</body>
+</html>

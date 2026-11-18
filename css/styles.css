@@ -1,0 +1,378 @@
+/* =========================================================
+   DEEP OPS — єдиний файл стилів для всіх 5 сторінок
+   Лабораторна робота №1 (чистий HTML/CSS, без фреймворків)
+   ========================================================= */
+
+/* ---------- Палітра кольорів (5 кольорів) ---------- */
+:root {
+  --dark: #0b1d2a;     /* темно-синій «нічне море»: навігація, футер */
+  --sea: #12384a;      /* глибина: шапка, посилання */
+  --accent: #158f57;   /* зелений «нічного бачення»: акценти, hover */
+  --light: #e6eef0;    /* світлий сіро-блакитний: фон блоків */
+  --white: #ffffff;    /* білий: фон сторінки */
+  --text: #13222b;     /* основний текст */
+}
+
+/* ---------- Базові стилі ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif; /* основний шрифт — sans-serif */
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--sea);
+  transition: color 0.2s;
+}
+
+/* Hover-ефект для всіх посилань */
+a:hover,
+a:focus {
+  color: var(--accent);
+}
+
+/* Обмеження ширини контенту та центрування */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Шапка (Header) ---------- */
+.site-header {
+  height: 100px;               /* фіксована висота шапки */
+  background-color: var(--sea);
+  color: var(--white);
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--light);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-name {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.slogan {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ---------- Навігація (Navigation) ---------- */
+.site-nav {
+  background-color: var(--dark);
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;            /* горизонтальне меню */
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  display: block;
+  padding: 14px 20px;
+  color: var(--light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hover-ефект пунктів меню */
+.site-nav a:hover,
+.site-nav a:focus {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+/* Поточна сторінка */
+.site-nav a.active {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* ---------- Основний контент: три блоки-колонки (CSS Grid) ---------- */
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+
+.page-title {
+  grid-column: 1 / -1;     /* заголовок сторінки на всю ширину */
+  margin: 0;
+  color: var(--dark);
+}
+
+.block {
+  background-color: var(--light);
+  border-radius: 10px;
+  padding: 20px;
+  border-top: 4px solid var(--accent);
+}
+
+.block h2 {
+  margin-top: 0;
+  color: var(--dark);
+}
+
+.block h3 {
+  color: var(--sea);
+}
+
+.block img {
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.block li {
+  margin-bottom: 6px;
+}
+
+.note {
+  font-size: 13px;
+  color: var(--sea);
+}
+
+/* Сторінка «Галерея»: вступ + таблиця зверху, галерея на всю ширину знизу */
+.content-gallery {
+  grid-template-columns: 1fr 2fr;
+}
+
+.content-gallery .block-wide {
+  grid-column: 1 / -1;
+  order: 3;
+}
+
+.gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.gallery figure {
+  height: 100%;
+  margin: 0;
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery img {
+  margin: 0;
+  border-radius: 0;
+}
+
+.gallery figcaption {
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+/* ---------- Таблиці ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+  font-size: 14px;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 6px;
+  color: var(--sea);
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #c9d8dc;
+  text-align: left;
+}
+
+th {
+  background-color: var(--sea);
+  color: var(--white);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f3f7f8;
+}
+
+/* ---------- Форма зворотного зв'язку ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #b9cdd2;
+  border-radius: 6px;
+  font: inherit;
+  margin-bottom: 8px;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--sea);
+  color: var(--white);
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent);
+}
+
+/* ---------- Футер (Footer) ---------- */
+.site-footer {
+  background-color: var(--dark);  /* фон, відмінний від контенту */
+  color: var(--light);
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+
+.social a {
+  color: var(--light);
+}
+
+.social a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Адаптивність (media queries) ---------- */
+
+/* Планшети: дві колонки */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content > .block:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .content-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Мобільні (< 768px): блоки розташовуються вертикально */
+@media (max-width: 767px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    height: 100px;
+  }
+
+  .site-name {
+    font-size: 22px;
+  }
+
+  .slogan {
+    font-size: 12px;
+  }
+
+  .site-nav ul {
+    justify-content: center;
+  }
+
+  .site-nav a {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Емблема DEEP OPS у шапці: кругла, з легким світінням при наведенні */
+.logo .emblem {
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover .emblem {
+  transform: rotate(-8deg) scale(1.08);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6), 0 0 14px rgba(120, 200, 220, 0.5);
+}
